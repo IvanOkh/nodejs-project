@@ -48,3 +48,44 @@ console.log(name, age);
 const morehobbies = ["Sports", "Swimming"];
 const [hobby1, hobby2] = morehobbies;
 console.log(hobby1, hobby2);
+
+//async code
+setTimeout(() => {
+  console.log("Timer is done");
+}, 1000);
+
+//callback
+const fetchData = (callback) => {
+  setTimeout(() => {
+    callback("Done");
+  }, 1500);
+};
+
+setTimeout(() => {
+  console.log("Timeris done!");
+  fetchData((text) => {
+    console.log(text);
+  });
+}, 2000);
+
+//promise
+const fdata = () => {
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Done promise!");
+    }, 1500);
+  });
+  return promise;
+};
+
+setTimeout(() => {
+  console.log("promise timer is done");
+  fdata()
+    .then((text3) => {
+      console.log(text3);
+      return fdata();
+    })
+    .then((text4) => {
+      console.log(text4);
+    });
+}, 2000);
