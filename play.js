@@ -35,3 +35,16 @@ const toArray = (...args) => {
   return args;
 };
 console.log(toArray(1, 2, 3, 4));
+
+//the other properties will be dropped from incoming object, all but name attribute
+const printName = ({ name }) => {
+  console.log(name);
+};
+printName(person);
+
+const { name, age } = person;
+console.log(name, age);
+
+const morehobbies = ["Sports", "Swimming"];
+const [hobby1, hobby2] = morehobbies;
+console.log(hobby1, hobby2);
