@@ -4,7 +4,7 @@ const app = express();
 
 app.use("/add-product", (req, res, next) => {
   console.log("In fisrt middleware!");
-  res.send("<h1>The 'Add product' page</h1>");
+  res.send("<form> </form>");
 });
 
 app.use("/", (req, res, next) => {
